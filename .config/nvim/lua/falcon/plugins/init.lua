@@ -1,3 +1,6 @@
 return {
-  "christoomey/vim-tmux-navigator", -- tmux & split window navigation
+  "WhoIsSethDaniel/mason-tool-installer.nvim",
+  "williamboman/mason.nvim",
+  "williamboman/mason-lspconfig.nvim",
+  "neovim/nvim-lspconfig",
 }

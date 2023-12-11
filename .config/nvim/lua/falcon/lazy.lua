@@ -11,4 +11,11 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("falcon.plugins")
+require("lazy").setup({
+  { import = "falcon.plugins" },
+  { import = "falcon.plugins.lsp" },
+})
+require("mason").setup()
+require("mason-lspconfig").setup {
+    ensure_installed = { "lua_ls", "rust_analyzer" },
+}
