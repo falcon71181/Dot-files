@@ -22,15 +22,19 @@ return {
 
     mason_lspconfig.setup({
       ensure_installed = {
+        "stylua",
+        "selene",
+        "luacheck",
+        "shellcheck",
+        "shfmt",
+        "tailwindcss-language-server",
+        "typescript-language-server",
         "tsserver",
         "html",
-        "cssls",
         "lua_ls",
-        "emmet_ls",
         "pyright",
         "graphql",
         "solargraph",
-        "angularls",
       },
       automatic_installation = true,
     })

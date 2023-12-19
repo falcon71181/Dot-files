@@ -1,5 +1,5 @@
 [$Version]
-update_info=filepicker.upd:filepicker-remove-old-previews-entry
+update_info=filepicker.upd:filepicker-remove-old-previews-entry,kwin.upd:animation-speed
 
 [General]
 TerminalApplication=kitty

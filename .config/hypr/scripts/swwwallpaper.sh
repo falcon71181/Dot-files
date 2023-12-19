@@ -26,7 +26,7 @@ Wall_Update()
     fi
 
     wait
-    awk -F '|' -v thm="${curTheme}" -v wal="${x_update}" '{OFS=FS} {if($2==thm)$NF=wal;print$0}' "${ThemeCtl}" > ${ScrDir}/tmp && mv ${ScrDir}/tmp "${ThemeCtl}"
+    awk -F '|' -v thm="${curTheme}" -v wal="${x_update}" '{OFS=FS} {if($2==thm)$NF=wal;print$0}' "${ThemeCtl}" > "${ScrDir}/tmp" && mv "${ScrDir}/tmp" "${ThemeCtl}"
     ln -fs "${x_wall}" "${wallSet}"
     ln -fs "${cacheDir}/${curTheme}/${cacheImg}.rofi" "${wallRfi}"
     ln -fs "${cacheDir}/${curTheme}/${cacheImg}.blur" "${wallBlr}"
@@ -70,11 +70,11 @@ Wall_Set()
 
 # set variables
 
-ScrDir=`dirname $(realpath $0)`
+ScrDir=`dirname "$(realpath "$0")"`
 source $ScrDir/globalcontrol.sh
-wallSet="$HOME/.config/swww/wall.set"
-wallBlr="$HOME/.config/swww/wall.blur"
-wallRfi="$HOME/.config/swww/wall.rofi"
+wallSet="${XDG_CONFIG_HOME:-$HOME/.config}/swww/wall.set"
+wallBlr="${XDG_CONFIG_HOME:-$HOME/.config}/swww/wall.blur"
+wallRfi="${XDG_CONFIG_HOME:-$HOME/.config}/swww/wall.rofi"
 ctlLine=$(grep '^1|' ${ThemeCtl})
 
 if [ `echo $ctlLine | wc -l` -ne "1" ] ; then
@@ -89,8 +89,8 @@ wallPath=$(dirname "$fullPath")
 mapfile -d '' Wallist < <(find ${wallPath} -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) -print0 | sort -z)
 
 if [ ! -f "$fullPath" ] ; then
-    if [ -d "$HOME/.config/swww/$curTheme" ] ; then
-        wallPath="$HOME/.config/swww/$curTheme"
+    if [ -d "${XDG_CONFIG_HOME:-$HOME/.config}/swww/$curTheme" ] ; then
+        wallPath="${XDG_CONFIG_HOME:-$HOME/.config}/swww/$curTheme"
         mapfile -d '' Wallist < <(find ${wallPath} -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) -print0 | sort -z)
         fullPath="${Wallist[0]}"
     else
