@@ -1,5 +1,9 @@
 return {
-  "NvChad/nvim-colorizer.lua",
-  event = { "BufReadPre", "BufNewFile" },
-  config = true,
+  "norcalli/nvim-colorizer.lua",
+  config = function()
+    vim.o.termguicolors = true
+    local colorizer = require "colorizer"
+
+    colorizer.setup()
+  end,
 }

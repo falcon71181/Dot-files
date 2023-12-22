@@ -1,9 +1,18 @@
 return {
-  "WhoIsSethDaniel/mason-tool-installer.nvim",
-  "williamboman/mason.nvim",
-  "williamboman/mason-lspconfig.nvim",
-  "neovim/nvim-lspconfig",
-  "j-hui/fidget.nvim",
-  "numToStr/Comment.nvim",
-  "lukas-reineke/indent-blankline.nvim",
+  -- emmet
+  {
+    "mattn/emmet-vim",
+  },
+  -- rainbow_csv
+  {
+    "mechatroner/rainbow_csv",
+  },
+  -- Snippet
+  {
+    "L3MON4D3/LuaSnip",
+  },
+  -- Distraction-free Zen Mode
+  {
+    "folke/zen-mode.nvim",
+  },
 }

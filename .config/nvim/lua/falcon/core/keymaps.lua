@@ -1,9 +1,27 @@
 -- set leader key to space
 vim.g.mapleader = " "
 
+-- Files and Others
+vim.o.fileencoding = "utf-8" -- File Encoding
+vim.g.loaded_netrw = 1 -- Helps opening links in the internet (probabilly -_-)
+vim.g.loaded_netrwPlugin = 1
+vim.opt.autochdir = true
+vim.cmd "filetype plugin indent on"
+vim.o.shortmess = vim.o.shortmess .. "c"
+vim.o.hidden = true
+vim.o.whichwrap = "b,s,<,>,[,],h,l"
+vim.opt.iskeyword:append "-,_"
+vim.opt.virtualedit = "block"
+
+-- Appearance
+vim.opt.termguicolors = true
+vim.o.pumheight = 10 -- Max items to show in pop up menu
+vim.o.cmdheight = 1 -- Max items to show in command menu
+vim.o.conceallevel = 0 -- For markdown like elements
+
 -- General Keymaps -------------------
 
-vim.opt.backspace = '2'
+vim.opt.backspace = "2"
 vim.opt.showcmd = true
 vim.opt.laststatus = 2
 vim.opt.autowrite = true
@@ -30,7 +48,7 @@ local keymap = vim.keymap -- for conciseness
 ---------------------
 
 -- window management
-keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })     -- split window vertically
-keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })   -- split window horizontally
-keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" })      -- make split windows equal width & height
+keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
+keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" }) -- split window horizontally
+keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" }) -- make split windows equal width & height
 keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window

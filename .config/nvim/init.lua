@@ -1,5 +1,5 @@
--- require("falcon.core")
--- require("falcon.lazy")
+require "falcon.core"
+require "falcon.lazy"
 
-require("abhay.core")
-require("abhay.lazy")
+-- require "abhay.core"
+-- require "abhay.lazy"
