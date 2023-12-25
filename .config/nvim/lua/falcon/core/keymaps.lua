@@ -19,14 +19,25 @@ vim.o.pumheight = 10 -- Max items to show in pop up menu
 vim.o.cmdheight = 1 -- Max items to show in command menu
 vim.o.conceallevel = 0 -- For markdown like elements
 
--- General Keymaps -------------------
-
-vim.opt.backspace = "2"
-vim.opt.showcmd = true
-vim.opt.laststatus = 2
-vim.opt.autowrite = true
-vim.opt.cursorline = true
-vim.opt.autoread = true
+-- Tabs and indentations
+vim.o.tabstop = 2
+vim.bo.tabstop = 2
+vim.o.showtabline = 2
+vim.o.softtabstop = 2
+vim.o.shiftwidth = 2
+vim.bo.shiftwidth = 2
+vim.o.smartindent = true
+vim.bo.smartindent = true
+vim.o.autoindent = true
+vim.bo.autoindent = true
+vim.o.expandtab = true
+vim.bo.expandtab = true
+-- vim.opt.backspace = "2"
+-- vim.opt.showcmd = true
+-- vim.opt.laststatus = 2
+-- vim.opt.autowrite = true
+-- vim.opt.cursorline = true
+-- vim.opt.autoread = true
 
 -- use spaces for tabs and whatnot
 
