@@ -36,6 +36,10 @@ return {
         ["rust-analyzer"] = {},
       },
     }
+    -- Java LS
+    lspconfig.jdtls.setup {
+      capabilities = capabilities,
+    }
 
     -- html
     lspconfig.html.setup {
