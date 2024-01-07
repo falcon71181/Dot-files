@@ -39,7 +39,7 @@ function in {
     local pkg="$1"
     if pacman -Si "$pkg" &>/dev/null ; then
         sudo pacman -S "$pkg"
-    else 
+    else
         "$aurhelper" -S "$pkg"
     fi
 }
@@ -56,9 +56,7 @@ alias pa='$aurhelper -Ss' # list availabe package
 alias pc='$aurhelper -Sc' # remove unused cache
 alias po='$aurhelper -Qtdq | $aurhelper -Rns -' # remove unused packages, also try > $aurhelper -Qqd | $aurhelper -Rsu --print -
 alias vc='code' # gui code editor
+alias vim='nvim' # nvim
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-#Display Pokemon
-pokemon-colorscripts --no-title -r
